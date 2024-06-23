@@ -1,0 +1,22 @@
+h1{
+  color: #bc5a94;
+  font-family:'Arial';
+}
+
+h2{
+  color: #bc5a94;
+  font-family:'Arial'
+}
+
+p{
+  color: #bc5a94;
+  font-family:'Arial'
+}
+
+.game_links{
+  border-radius: 25px;
+  background: #ADD899;
+  padding: 10px;
+  width: 200px;
+  height: 200px;
+}
