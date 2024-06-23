@@ -12,6 +12,11 @@ h2{
   font-family:'Arial'
 }
 
+h3{
+  color: #bc5a94;
+  font-family:'Arial'
+}
+
 p{
   color: #bc5a94;
   font-family:'Arial'
@@ -31,4 +36,11 @@ p{
   padding: 10px;
   width: 200px;
   height: 200px;
+}
+
+.web_pages{
+  border-radius: 25px;
+  background: #ADD899;
+  padding: 5px;
+  height: 300px;
 }
