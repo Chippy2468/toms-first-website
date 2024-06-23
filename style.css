@@ -13,6 +13,14 @@ p{
   font-family:'Arial'
 }
 
+.home_page_links{
+  border-radius: 25px;
+  background: #ADD899;
+  padding: 20px;
+  width: 400px;
+  height: 400px;
+}
+
 .game_links{
   border-radius: 25px;
   background: #ADD899;
