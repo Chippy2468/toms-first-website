@@ -38,8 +38,11 @@ p{
   background: #ADD899;
   padding: 10px;
   width: 200px;
-  height: 200px
-  margin: 25px
+  height: 200px;
+  margin: 25px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .web_pages{
