@@ -18,7 +18,9 @@ var gifArray = [["https://i.pinimg.com/originals/0d/b3/14/0db314fd7cca54738f3fe6
     ["https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg3QjL4RsR0C0SUsDOO7VrM330WTdnCm88h1SMWvDObUY0Y8sPdnGCj5af91kIw8K2ABgumGh0FQMwXODsInS9cteDw6kApCcvnMBTNIuKRHz1s0QLxTl-Bvzw0KodV1NW_xjfFxV-tBKIc_1HbHE7b5sfGz9g8ulLBMkOOCGHQTCtBf_a9Nb00TclurQ/s480/giphy.gif", "Aw, He's Miserable"],
     ["https://25.media.tumblr.com/4423ff497fe6f5d70d18e84e22540330/tumblr_mi0vbhhV5S1rmgel4o1_500.gif","Homer, The Shining!"],
     ["https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/f85f615f-d4f1-408b-8810-9047d7f66b2f/d6b447a-8397ce23-4bff-456b-bfd8-8cc13d82c4e2.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2Y4NWY2MTVmLWQ0ZjEtNDA4Yi04ODEwLTkwNDdkN2Y2NmIyZlwvZDZiNDQ3YS04Mzk3Y2UyMy00YmZmLTQ1NmItYmZkOC04Y2MxM2Q4MmM0ZTIuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.mzsnup1eCETzI_0ei4ViQ3hopuUvTWGdfKcmaVqCuQE", "Homer Swearing"],
-    ["https://64.media.tumblr.com/91a49d615314afc1482e9178b580ec74/0aaf5e52c840c309-97/s540x810/537296d8f341e8a51b4f22d9fd24257595777c3c.gifv","Dr Nick"]
+    ["https://64.media.tumblr.com/91a49d615314afc1482e9178b580ec74/0aaf5e52c840c309-97/s540x810/537296d8f341e8a51b4f22d9fd24257595777c3c.gifv","Dr Nick"],
+    ["https://media.tenor.com/9HdeM_pvdnIAAAAM/just-ask-this-scientician-um.gif","Just Ask This Scientician"],
+    ["https://media.tenor.com/3FcijD6HUzAAAAAM/aurora-borealis-steamed-hams.gif","Aurora Borealis"]
 ];
 
 var randomNumber = Math.floor(Math.random() * gifArray.length);
