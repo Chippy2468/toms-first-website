@@ -133,17 +133,21 @@ function generateArray() {
 
 
     abc = shuffled;
-    aaa = group1;
-    bbb = group2;
-    ccc = group3;
-    ddd = group4;
+    answer1 = group1[0];
+    answerGroup1 = [group1[1], group1[2], group1[3], group1[4]];
+    answer2 = group2[0];
+    answerGroup2 = [group2[1], group2[2], group2[3], group2[4]];
+    answer3 = group3[0];
+    answerGroup3 = [group3[1], group3[2], group3[3], group3[4]];
+    answer4 = group4[0];
+    answerGroup4 = [group4[1], group4[2], group4[3], group4[4]];
     return shuffled;
 }
 
 generateArray();
 
 function afterRefresh() {
-    document.querySelectorAll("p")[0].innerHTML = abc;
+  /*  document.querySelectorAll("p")[0].innerHTML = abc; */
     numberOfClicked = 0;
     selectedTiles = [];
 }
@@ -260,17 +264,30 @@ function shuffleArray(initialTileArray) {
 
 
     function checkAnswers(){
-            switch(numberOfClicked){
-                case 4:
-                    alert(numberOfClicked);
-                    alert(selectedTiles);
-                    alert(aaa);
-                    alert(bbb);
-                    alert(ccc);
-                    alert(ddd);
-                break;
 
-                default:
-                    alert("4 Tiles Must Be Selected!");
+        var finalSelectedTiles = selectedTiles.sort();
+        var finalAnswerGroup1 = answerGroup1.sort();
+        var finalAnswerGroup2 = answerGroup2.sort();
+        var finalAnswerGroup3 = answerGroup3.sort();
+        var finalAnswerGroup4 = answerGroup4.sort();
+        
+        switch(numberOfClicked){
+            case 4:
+                if (finalSelectedTiles[0] == finalAnswerGroup1[0] && finalSelectedTiles[1] == finalAnswerGroup1[1] && finalSelectedTiles[2] == finalAnswerGroup1[2] && finalSelectedTiles[3] == finalAnswerGroup1[3]){
+                    alert ("Correct!!! The theme for this was... " + answer1);
+                } else if (finalSelectedTiles[0] == finalAnswerGroup2[0] && finalSelectedTiles[1] == finalAnswerGroup2[1] && finalSelectedTiles[2] == finalAnswerGroup2[2] && finalSelectedTiles[3] == finalAnswerGroup3[3]){
+                    alert ("Correct!!! The theme for this was... " + answer2);
+                } else if (finalSelectedTiles[0] == finalAnswerGroup3[0] && finalSelectedTiles[1] == finalAnswerGroup3[1] && finalSelectedTiles[2] == finalAnswerGroup3[2] && finalSelectedTiles[3] == finalAnswerGroup3[3]){
+                    alert ("Correct!!! The theme for this was... " + answer3);
+                } else if (finalSelectedTiles[0] == finalAnswerGroup4[0] && finalSelectedTiles[1] == finalAnswerGroup4[1] && finalSelectedTiles[2] == finalAnswerGroup4[2] && finalSelectedTiles[3] == finalAnswerGroup4[3]){
+                    alert ("Correct!!! The theme for this was... " + answer4);
+                } else {
+                    alert ("No Match :(");
+                }
+            break;
+
+            default:
+                alert("4 tile must be pressed!");
             }
+
     }
