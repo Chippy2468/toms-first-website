@@ -388,7 +388,6 @@ function reorderAfterAnswer(){
             abc.splice(abc.indexOf(firstAnswerGroup[1]),1);
             abc.splice(abc.indexOf(firstAnswerGroup[2]),1);
             abc.splice(abc.indexOf(firstAnswerGroup[3]),1);
-            alert(abc);
 
             unshuffled = abc;
             shuffled1 = unshuffled
