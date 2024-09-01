@@ -15,14 +15,14 @@ let fourthAnswerGroup = [];
 
 /* This an array of all of the potential sets which can be used as part of the game, will hopefully be populated from a DB / via an API at some point */
 const connectionArray = [
-    ["start of pokemon", "bulb", "bee", "rat", "char"], 
-    ["stadium synonyms", "arena", "bowl", "coliseum", "dome"], 
-    ["romantic partner", "flame", "lover", "steady", "sweetheart"],
-    ["facade", "bluff", "front", "sham", "show"], 
-    ["___ goose", "grey", "golden", "mother", "silly"],
-    ["transfer", "give", "hand", "pass", "send"],
-    ["fish", "bass", "fluke", "perch", "pike"],
-    ["mess of hair", "mane", "mop", "shock", "tangle"],
+    ["start of pokemon", "BULB", "BEE", "RAT", "CHAR"], 
+    ["stadium synonyms", "ARENA", "BOWL", "COLISEUM", "DOME"], 
+    ["romantic partner", "FLAME", "LOVER", "STEADY", "SWEETHEART"],
+    ["facade", "BLUFF", "FRONT", "SHAM", "SHOW"], 
+    ["___ goose", "GREY", "GOLDEN", "MOTHER", "SILLY"],
+    ["transfer", "GIVE", "HAND", "PASS", "SEND"],
+    ["fish", "BASS", "FLUKE", "PERCH", "PIKE"],
+    ["mess of hair", "MANE", "MOP", "SHOCK", "TANGLE"],
     ["PIECES OF FURNITURE", "BED", "CHAIR", "COUCH", "TABLE"],
     ["CARRY, AS A FEELING", "BEAR", "HARBOR", "HOLD", "MAINTAIN"],
     ["WINE TASTING DESCRIPTORS", "BALANCED", "DRY", "FULL", "SWEET"],
