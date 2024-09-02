@@ -49,7 +49,7 @@ const connectionArray = [
     ["ESPECIALLY", "MIGHTY", "PRETTY", "REALLY", "VERY"],
     ["DISNEY CHARACTERS", "DAISY", "GOOFY", "HAPPY", "LADY"],
     ["KINDS OF BLUE", "BABY", "NAVY", "SKY", "TIFFANY"],
-    ["BODY PARTS PLUS "Y"", "ARMY", "COLONY", "LIVERY", "SHINY"],
+    ["BODY PARTS PLUS Y", "ARMY", "COLONY", "LIVERY", "SHINY"],
     ["EXITED", "DEPARTED", "LEFT", "SPLIT", "WENT"],
     ["ONE FLYING AN AIRPLANE", "ACE", "AVIATOR", "FLIER", "PILOT"],
     ["KINDS OF WHALES", "BLUE", "FIN", "GRAY", "RIGHT"],
