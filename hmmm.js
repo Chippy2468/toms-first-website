@@ -556,7 +556,21 @@ function reorderAfterAnswer(){
 function shuffleGrid(){
     switch(correctSets){
         case 0:
-
+            unshuffled = abc;
+            shuffled1 = unshuffled
+            .map(value => ({ value, sort: Math.random() }))
+            .sort((a, b) => a.sort - b.sort)
+            .map(({ value }) => value)
+            console.log(shuffled1)
+            for(let j = 0; j < 16; j++){
+                document.querySelectorAll(".connections_buttom")[j].innerHTML = shuffled1[j];
+            };
+            for(let i = 0; i < 16; i++){
+                document.querySelectorAll(".connections_buttom")[i].style.backgroundColor = "red";
+                document.querySelectorAll(".connections_buttom")[i].style.color = "black";
+            };
+            selectedTiles = [];
+            numberOfClicked = 0;
         break;
         case 1:
             unshuffled = abc;
