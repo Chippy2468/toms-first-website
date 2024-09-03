@@ -552,6 +552,66 @@ function reorderAfterAnswer(){
     }
 }
 
+/* Add a function to allow the player to shuffle the remaining answers */
+function shuffleGrid(){
+    switch(correctSets){
+        case 0:
+
+        break;
+        case 1:
+            unshuffled = abc;
+            shuffled1 = unshuffled
+            .map(value => ({ value, sort: Math.random() }))
+            .sort((a, b) => a.sort - b.sort)
+            .map(({ value }) => value)
+            console.log(shuffled1)
+            for(let j = 0; j < 12; j++){
+                document.querySelectorAll(".connections_buttom")[j+4].innerHTML = shuffled1[j];
+            };
+            for(let i = 4; i < 16; i++){
+                document.querySelectorAll(".connections_buttom")[i].style.backgroundColor = "red";
+                document.querySelectorAll(".connections_buttom")[i].style.color = "black";
+            };
+            selectedTiles = [];
+            numberOfClicked = 0;
+        break;
+        case 2:
+            unshuffled = abc;
+            shuffled2 = unshuffled
+            .map(value => ({ value, sort: Math.random() }))
+            .sort((a, b) => a.sort - b.sort)
+            .map(({ value }) => value)
+            console.log(shuffled2)
+            for(let j = 0; j < 8; j++){
+                document.querySelectorAll(".connections_buttom")[j+8].innerHTML = shuffled2[j];
+            };
+            for(let i = 8; i < 16; i++){
+                document.querySelectorAll(".connections_buttom")[i].style.backgroundColor = "red";
+                document.querySelectorAll(".connections_buttom")[i].style.color = "black";
+            };
+            selectedTiles = [];
+            numberOfClicked = 0;
+        break;
+        case 3:
+            unshuffled = abc;
+            shuffled3 = unshuffled
+            .map(value => ({ value, sort: Math.random() }))
+            .sort((a, b) => a.sort - b.sort)
+            .map(({ value }) => value)
+            console.log(shuffled3)
+            for(let j = 0; j < 4; j++){
+                document.querySelectorAll(".connections_buttom")[j+12].innerHTML = shuffled3[j];
+            };
+            for(let i = 12; i < 16; i++){
+                document.querySelectorAll(".connections_buttom")[i].style.backgroundColor = "red";
+                document.querySelectorAll(".connections_buttom")[i].style.color = "black";
+            };
+            selectedTiles = [];
+            numberOfClicked = 0;
+        break;
+    }
+}
+
 /* Adding a function to display the currently selected answers to be used during testing */
 function displayCurrentlySelected(){
     alert(selectedTiles);
