@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tom's Website 2.0</title>
+    <link rel="stylesheet" href="./connections_style.css" />
+</head>
+<body>
+
+    <section class="layout">
+        <div class="header"></div>
+        <div class="leftSide">
+            <button class="button" onclick="refreshArray();">Restart Game</button>
+            <button class="button" onclick="deselectAll();">Deselect All</button>
+            <button class="button" onclick="shuffleGrid();">Shuffle</button>
+            <button class="button" onclick="checkAnswers();">Check Answer</button>
+        </div>
+        <div class="body">
+            <div class="bodyCenter">
+                <button class="connections_tile" id="0"></button>
+                <button class="connections_tile" id="1"></button>
+                <button class="connections_tile" id="2"></button>
+                <button class="connections_tile" id="3"></button>
+                <button class="connections_tile" id="4"></button>
+                <button class="connections_tile" id="5"></button>
+                <button class="connections_tile" id="6"></button>
+                <button class="connections_tile" id="7"></button>
+                <button class="connections_tile" id="8"></button>
+                <button class="connections_tile" id="9"></button>
+                <button class="connections_tile" id="10"></button>
+                <button class="connections_tile" id="11"></button>
+                <button class="connections_tile" id="12"></button>
+                <button class="connections_tile" id="13"></button>
+                <button class="connections_tile" id="14"></button>
+                <button class="connections_tile" id="15"></button>
+            </div>
+        </div>
+        <div class="rightSide">
+            <div class="fourLivesIcon"></div>
+            <div class="threeLivesIcon"></div>
+            <div class="twoLivesIcon"></div>
+            <div class="oneLifeIcon"></div>
+        </div>
+        <div class="footer"></div>
+      </section>
+
+      <script src="./connectionsLogic.js" charset="UTF-8"></script>
+</body>
