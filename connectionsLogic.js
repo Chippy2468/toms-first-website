@@ -18,14 +18,14 @@ let fourthAnswerGroup = [];
 
 /* This an array of all of the potential sets which can be used as part of the game, will hopefully be populated from a DB / via an API at some point */
 const connectionArray = [
-    ["start of pokemon", "BULB", "BEE", "RAT", "CHAR"], 
-    ["stadium synonyms", "ARENA", "BOWL", "COLISEUM", "DOME"], 
-    ["romantic partner", "FLAME", "LOVER", "STEADY", "SWEETHEART"],
-    ["facade", "BLUFF", "FRONT", "SHAM", "SHOW"], 
-    ["___ goose", "GREY", "GOLDEN", "MOTHER", "SILLY"],
-    ["transfer", "GIVE", "HAND", "PASS", "SEND"],
-    ["fish", "BASS", "FLUKE", "PERCH", "PIKE"],
-    ["mess of hair", "MANE", "MOP", "SHOCK", "TANGLE"],
+    ["START OF POKEMON", "BULB", "BEE", "RAT", "CHAR"], 
+    ["STADIUM SYNONMS", "ARENA", "BOWL", "COLISEUM", "DOME"], 
+    ["ROMANTIC PARTNER", "FLAME", "LOVER", "STEADY", "SWEETHEART"],
+    ["FACADE", "BLUFF", "FRONT", "SHAM", "SHOW"], 
+    ["___ GOOSE", "GREY", "GOLDEN", "MOTHER", "SILLY"],
+    ["TRANSFER", "GIVE", "HAND", "PASS", "SEND"],
+    ["FISH", "BASS", "FLUKE", "PERCH", "PIKE"],
+    ["MESS OF HAIR", "MANE", "MOP", "SHOCK", "TANGLE"],
     ["PIECES OF FURNITURE", "BED", "CHAIR", "COUCH", "TABLE"],
     ["CARRY, AS A FEELING", "BEAR", "HARBOR", "HOLD", "MAINTAIN"],
     ["WINE TASTING DESCRIPTORS", "BALANCED", "DRY", "FULL", "SWEET"],
@@ -355,7 +355,151 @@ function checkAnswers(){
     let finalAnswerGroup2 = answerGroup2.sort();
     let finalAnswerGroup3 = answerGroup3.sort();
     let finalAnswerGroup4 = answerGroup4.sort();
-        
+
+    switch(numberOfClicked){
+        case 4:
+
+    commonValues1 = finalAnswerGroup1.filter(value => finalSelectedTiles.includes(value));
+    correctAnswersCount1 = commonValues1.length;
+
+    commonValues2 = finalAnswerGroup2.filter(value => finalSelectedTiles.includes(value));
+    correctAnswersCount2 = commonValues2.length;
+
+    commonValues3 = finalAnswerGroup3.filter(value => finalSelectedTiles.includes(value));
+    correctAnswersCount3 = commonValues3.length;
+
+    commonValues4 = finalAnswerGroup4.filter(value => finalSelectedTiles.includes(value));
+    correctAnswersCount4 = commonValues4.length;
+
+    if (correctAnswersCount1 === 3 || correctAnswersCount2 === 3 || correctAnswersCount3 === 3 || correctAnswersCount4 === 3) {
+        alert ("Unlucky... 3 Correct Answers...");
+        incorrectGuesses++;
+        changeLifeCount();
+        switch(incorrectGuesses){
+        case 4:
+            endGame();
+        break;
+        default:
+            ;
+        }
+    }
+    else if (correctAnswersCount1 === 4) {
+        alert ("Correct!!! The theme for this was... " + answer1);
+        switch(correctSets){
+            case 0:
+                firstAnswerGroup = selectedTiles;
+            break;
+            case 1:
+                secondAnswerGroup = selectedTiles;
+            break;
+            case 2:
+                thirdAnswerGroup = selectedTiles;
+            break;
+            case 3:
+                fourthAnswerGroup = selectedTiles;
+            break;
+            default:
+                ;
+        }
+        correctSets++;
+                selectedTiles = [];
+                numberOfClicked = 0;
+                setRowColors();
+                reorderAfterAnswer();
+    }
+    else if (correctAnswersCount2 === 4) {
+        alert ("Correct!!! The theme for this was... " + answer2);
+        switch(correctSets){
+            case 0:
+                firstAnswerGroup = selectedTiles;
+            break;
+            case 1:
+                secondAnswerGroup = selectedTiles;
+            break;
+            case 2:
+                thirdAnswerGroup = selectedTiles;
+            break;
+            case 3:
+                fourthAnswerGroup = selectedTiles;
+            break;
+            default:
+                ;
+        }
+        correctSets++;
+                selectedTiles = [];
+                numberOfClicked = 0;
+                setRowColors();
+                reorderAfterAnswer();
+     
+    }
+    else if (correctAnswersCount3 === 4) {
+        alert ("Correct!!! The theme for this was... " + answer3);
+        switch(correctSets){
+            case 0:
+                firstAnswerGroup = selectedTiles;
+            break;
+            case 1:
+                secondAnswerGroup = selectedTiles;
+            break;
+            case 2:
+                thirdAnswerGroup = selectedTiles;
+            break;
+            case 3:
+                fourthAnswerGroup = selectedTiles;
+            break;
+            default:
+                ;
+        }
+        correctSets++;
+                selectedTiles = [];
+                numberOfClicked = 0;
+                setRowColors();
+                reorderAfterAnswer();
+     
+    }
+    else if (correctAnswersCount4 === 4) {
+        alert ("Correct!!! The theme for this was... " + answer4);
+        switch(correctSets){
+            case 0:
+                firstAnswerGroup = selectedTiles;
+            break;
+            case 1:
+                secondAnswerGroup = selectedTiles;
+            break;
+            case 2:
+                thirdAnswerGroup = selectedTiles;
+            break;
+            case 3:
+                fourthAnswerGroup = selectedTiles;
+            break;
+            default:
+                ;
+        }
+        correctSets++;
+                selectedTiles = [];
+                numberOfClicked = 0;
+                setRowColors();
+                reorderAfterAnswer();
+    }
+    else
+    {
+        alert("Incorrect! :(")
+        incorrectGuesses++;
+        changeLifeCount();
+        switch(incorrectGuesses){
+        case 4:
+            endGame();
+        break;
+        default:
+            ;
+        }
+    }
+    break;
+    default:
+            alert("4 tiles must be pressed!");
+    }
+
+/*        
     switch(numberOfClicked){
         case 4:
             if (finalSelectedTiles[0] === finalAnswerGroup1[0] && finalSelectedTiles[1] === finalAnswerGroup1[1] && finalSelectedTiles[2] === finalAnswerGroup1[2] && finalSelectedTiles[3] === finalAnswerGroup1[3]){
@@ -472,6 +616,7 @@ function checkAnswers(){
         default:
             alert("4 tiles must be pressed!");
         }
+        */
 }
 
 /* Reorder after correct answer */
@@ -900,6 +1045,135 @@ function checkAnswers(){
                 reorderAfterAnswer();
             } else {
                 alert ("No Match :(");
+            }
+        break;
+
+        default:
+            alert("4 tiles must be pressed!");
+        }
+}
+*/
+
+/* Backup - Checks the selected answers */
+/*
+function checkAnswersBackup(){
+
+    let finalSelectedTiles = selectedTiles.sort();
+    let finalAnswerGroup1 = answerGroup1.sort();
+    let finalAnswerGroup2 = answerGroup2.sort();
+    let finalAnswerGroup3 = answerGroup3.sort();
+    let finalAnswerGroup4 = answerGroup4.sort();
+        
+    switch(numberOfClicked){
+        case 4:
+            if (finalSelectedTiles[0] === finalAnswerGroup1[0] && finalSelectedTiles[1] === finalAnswerGroup1[1] && finalSelectedTiles[2] === finalAnswerGroup1[2] && finalSelectedTiles[3] === finalAnswerGroup1[3]){
+                alert ("Correct!!! The theme for this was... " + answer1);
+                switch(correctSets){
+                    case 0:
+                        firstAnswerGroup = selectedTiles;
+                    break;
+                    case 1:
+                        secondAnswerGroup = selectedTiles;
+                    break;
+                    case 2:
+                        thirdAnswerGroup = selectedTiles;
+                    break;
+                    case 3:
+                        fourthAnswerGroup = selectedTiles;
+                    break;
+                    default:
+                        ;
+                };
+                correctSets++;
+                selectedTiles = [];
+                numberOfClicked = 0;
+                setRowColors();
+                reorderAfterAnswer();
+            } else if (finalSelectedTiles[0] === finalAnswerGroup2[0] && finalSelectedTiles[1] === finalAnswerGroup2[1] && finalSelectedTiles[2] === finalAnswerGroup2[2] && finalSelectedTiles[3] === finalAnswerGroup2[3]){
+                alert ("Correct!!! The theme for this was... " + answer2);
+                switch(correctSets){
+                    case 0:
+                        firstAnswerGroup = selectedTiles;
+                    break;
+                    case 1:
+                        secondAnswerGroup = selectedTiles;
+                    break;
+                    case 2:
+                        thirdAnswerGroup = selectedTiles;
+                    break;
+                    case 3:
+                        fourthAnswerGroup = selectedTiles;
+                    break;
+                    default:
+                        ;
+                };
+                correctSets++;
+                selectedTiles = [];
+                numberOfClicked = 0;
+                setRowColors();
+                reorderAfterAnswer();
+            } else if (finalSelectedTiles[0] === finalAnswerGroup3[0] && finalSelectedTiles[1] === finalAnswerGroup3[1] && finalSelectedTiles[2] === finalAnswerGroup3[2] && finalSelectedTiles[3] === finalAnswerGroup3[3]){
+                alert ("Correct!!! The theme for this was... " + answer3);
+                switch(correctSets){
+                    case 0:
+                        firstAnswerGroup = selectedTiles;
+                    break;
+                    case 1:
+                        secondAnswerGroup = selectedTiles;
+                    break;
+                    case 2:
+                        thirdAnswerGroup = selectedTiles;
+                    break;
+                    case 3:
+                        fourthAnswerGroup = selectedTiles;
+                    break;
+                    default:
+                        ;
+                };
+                correctSets++;
+                selectedTiles = [];
+                numberOfClicked = 0;
+                setRowColors();
+                reorderAfterAnswer();
+            } else if (finalSelectedTiles[0] === finalAnswerGroup4[0] && finalSelectedTiles[1] === finalAnswerGroup4[1] && finalSelectedTiles[2] === finalAnswerGroup4[2] && finalSelectedTiles[3] === finalAnswerGroup4[3]){
+                alert ("Correct!!! The theme for this was... " + answer4);
+                switch(correctSets){
+                    case 0:
+                        firstAnswerGroup = selectedTiles;
+                    break;
+                    case 1:
+                        secondAnswerGroup = selectedTiles;
+                    break;
+                    case 2:
+                        thirdAnswerGroup = selectedTiles;
+                    break;
+                    case 3:
+                        fourthAnswerGroup = selectedTiles;
+                    break;
+                    default:
+                        ;
+                };
+                correctSets++;
+                selectedTiles = [];
+                numberOfClicked = 0;
+                setRowColors();
+                reorderAfterAnswer();
+            } else {
+                incorrectGuesses++;
+                changeLifeCount();
+                switch(incorrectGuesses){
+                case 4:
+                    endGame();
+                break;
+                default:
+                    ;
+                }
+                switch(incorrectGuesses){
+                    case 4:
+                    break;
+                    default:
+                        alert ("No Match :(");
+                }
             }
         break;
 
