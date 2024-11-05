@@ -105,6 +105,13 @@ function setRowColors(){
             for(let i = 0; i < 16; i++){
                 document.querySelectorAll(".connections_tile")[i].style.backgroundColor = "grey";
                 document.querySelectorAll(".connections_tile")[i].style.color = "black";
+                document.querySelectorAll(".connections_tile")[i].style.opacity = "1";
+            };
+
+            for(let i = 0; i < 4; i++){
+                document.querySelectorAll(".answer_tiles")[i].style.backgroundColor = "blue";
+                document.querySelectorAll(".answer_tiles")[i].style.color = "white";
+                document.querySelectorAll(".answer_tiles")[i].style.opacity = "0";
             };
 
             document.querySelectorAll(".fourLivesIcon")[0].style.backgroundColor = "lightgreen";
@@ -125,6 +132,14 @@ function setRowColors(){
             for(let i=0; i<4; i++){
                 document.querySelectorAll(".connections_tile")[i].style.backgroundColor = "blue";
                 document.querySelectorAll(".connections_tile")[i].style.color = "white";
+                document.querySelectorAll(".connections_tile")[i].style.opacity = "0";
+            };
+            for(let i = 0; i < 1; i++){
+                document.querySelectorAll(".answer_tiles")[i].style.backgroundColor = "blue";
+                document.querySelectorAll(".answer_tiles")[i].style.color = "white";
+                document.querySelectorAll(".answer_tiles")[i].style.opacity = "1";
+                document.querySelectorAll(".answerTextBox")[i].style.opacity = "1";
+                document.querySelectorAll(".optionsTextBox")[i].style.opacity = "1";
             };
         break;
 
@@ -136,10 +151,19 @@ function setRowColors(){
             for(let i=0; i<4; i++){
                 document.querySelectorAll(".connections_tile")[i].style.backgroundColor = "blue";
                 document.querySelectorAll(".connections_tile")[i].style.color = "white";
+                document.querySelectorAll(".connections_tile")[i].style.opacity = "0";
             };
             for(let i=4; i<8; i++){
                 document.querySelectorAll(".connections_tile")[i].style.backgroundColor = "green";
                 document.querySelectorAll(".connections_tile")[i].style.color = "white";
+                document.querySelectorAll(".connections_tile")[i].style.opacity = "0";
+            };
+            for(let i = 1; i < 2; i++){
+                document.querySelectorAll(".answer_tiles")[i].style.backgroundColor = "green";
+                document.querySelectorAll(".answer_tiles")[i].style.color = "white";
+                document.querySelectorAll(".answer_tiles")[i].style.opacity = "1";
+                document.querySelectorAll(".answerTextBox")[i].style.opacity = "1";
+                document.querySelectorAll(".optionsTextBox")[i].style.opacity = "1";
             };
         break;
 
@@ -151,14 +175,24 @@ function setRowColors(){
             for(let i=0; i<4; i++){
                 document.querySelectorAll(".connections_tile")[i].style.backgroundColor = "blue";
                 document.querySelectorAll(".connections_tile")[i].style.color = "white";
+                document.querySelectorAll(".connections_tile")[i].style.opacity = "0";
             };
             for(let i=4; i<8; i++){
                 document.querySelectorAll(".connections_tile")[i].style.backgroundColor = "green";
                 document.querySelectorAll(".connections_tile")[i].style.color = "white";
+                document.querySelectorAll(".connections_tile")[i].style.opacity = "0";
             };
             for(let i=8; i<12; i++){
                 document.querySelectorAll(".connections_tile")[i].style.backgroundColor = "purple";
                 document.querySelectorAll(".connections_tile")[i].style.color = "white";
+                document.querySelectorAll(".connections_tile")[i].style.opacity = "0";
+            };
+            for(let i = 2; i < 3; i++){
+                document.querySelectorAll(".answer_tiles")[i].style.backgroundColor = "purple";
+                document.querySelectorAll(".answer_tiles")[i].style.color = "white";
+                document.querySelectorAll(".answer_tiles")[i].style.opacity = "1";
+                document.querySelectorAll(".answerTextBox")[i].style.opacity = "1";
+                document.querySelectorAll(".optionsTextBox")[i].style.opacity = "1";
             };
         break;
         
@@ -166,18 +200,29 @@ function setRowColors(){
             for(let i=0; i<4; i++){
                 document.querySelectorAll(".connections_tile")[i].style.backgroundColor = "blue";
                 document.querySelectorAll(".connections_tile")[i].style.color = "white";
+                document.querySelectorAll(".connections_tile")[i].style.opacity = "0";
             };
             for(let i=4; i<8; i++){
                 document.querySelectorAll(".connections_tile")[i].style.backgroundColor = "green";
                 document.querySelectorAll(".connections_tile")[i].style.color = "white";
+                document.querySelectorAll(".connections_tile")[i].style.opacity = "0";
             };
             for(let i=8; i<12; i++){
                 document.querySelectorAll(".connections_tile")[i].style.backgroundColor = "purple";
                 document.querySelectorAll(".connections_tile")[i].style.color = "white";
+                document.querySelectorAll(".connections_tile")[i].style.opacity = "0";
             };
             for(let i=12; i<16; i++){
                 document.querySelectorAll(".connections_tile")[i].style.backgroundColor = "orange";
                 document.querySelectorAll(".connections_tile")[i].style.color = "white";
+                document.querySelectorAll(".connections_tile")[i].style.opacity = "0";
+            };
+            for(let i = 3; i < 4; i++){
+                document.querySelectorAll(".answer_tiles")[i].style.backgroundColor = "orange";
+                document.querySelectorAll(".answer_tiles")[i].style.color = "white";
+                document.querySelectorAll(".answer_tiles")[i].style.opacity = "1";
+                document.querySelectorAll(".answerTextBox")[i].style.opacity = "1";
+                document.querySelectorAll(".optionsTextBox")[i].style.opacity = "1";
             };
         break;
 
@@ -263,6 +308,7 @@ function refreshArray(){
     /* Defines the 4 correct answer groups to be used when checking the responses */
     abc = shuffled;
     def = unshuffled;
+    answersArray = [group1[0], group2[0], group3[0], group4[0]]
     answer1 = group1[0];
     answerGroup1 = [group1[1], group1[2], group1[3], group1[4]];
     answer2 = group2[0];
@@ -388,15 +434,19 @@ function checkAnswers(){
         switch(correctSets){
             case 0:
                 firstAnswerGroup = selectedTiles;
+                firstAnswer = answer1;
             break;
             case 1:
                 secondAnswerGroup = selectedTiles;
+                secondAnswer = answer1;
             break;
             case 2:
                 thirdAnswerGroup = selectedTiles;
+                thirdAnswer = answer1;
             break;
             case 3:
                 fourthAnswerGroup = selectedTiles;
+                fourthAnswer = answer1;
             break;
             default:
                 ;
@@ -412,15 +462,19 @@ function checkAnswers(){
         switch(correctSets){
             case 0:
                 firstAnswerGroup = selectedTiles;
+                firstAnswer = answer2;
             break;
             case 1:
                 secondAnswerGroup = selectedTiles;
+                secondAnswer = answer2;
             break;
             case 2:
                 thirdAnswerGroup = selectedTiles;
+                thirdAnswer = answer2;
             break;
             case 3:
                 fourthAnswerGroup = selectedTiles;
+                fourthAnswer = answer2;
             break;
             default:
                 ;
@@ -437,15 +491,19 @@ function checkAnswers(){
         switch(correctSets){
             case 0:
                 firstAnswerGroup = selectedTiles;
+                firstAnswer = answer3;
             break;
             case 1:
                 secondAnswerGroup = selectedTiles;
+                secondAnswer = answer3;
             break;
             case 2:
                 thirdAnswerGroup = selectedTiles;
+                thirdAnswer = answer3;
             break;
             case 3:
                 fourthAnswerGroup = selectedTiles;
+                fourthAnswer = answer3;
             break;
             default:
                 ;
@@ -462,15 +520,19 @@ function checkAnswers(){
         switch(correctSets){
             case 0:
                 firstAnswerGroup = selectedTiles;
+                firstAnswer = answer4;
             break;
             case 1:
                 secondAnswerGroup = selectedTiles;
+                secondAnswer = answer4;
             break;
             case 2:
                 thirdAnswerGroup = selectedTiles;
+                thirdAnswer = answer4;
             break;
             case 3:
                 fourthAnswerGroup = selectedTiles;
+                fourthAnswer = answer4;
             break;
             default:
                 ;
@@ -627,6 +689,8 @@ function reorderAfterAnswer(){
             document.querySelectorAll(".connections_tile")[1].innerHTML = firstAnswerGroup[1];
             document.querySelectorAll(".connections_tile")[2].innerHTML = firstAnswerGroup[2];
             document.querySelectorAll(".connections_tile")[3].innerHTML = firstAnswerGroup[3];
+            document.querySelectorAll(".answerTextBox")[0].innerHTML = firstAnswer;
+            document.querySelectorAll(".optionsTextBox")[0].innerHTML = firstAnswerGroup;
             abc.splice(abc.indexOf(firstAnswerGroup[0]),1);
             abc.splice(abc.indexOf(firstAnswerGroup[1]),1);
             abc.splice(abc.indexOf(firstAnswerGroup[2]),1);
@@ -635,6 +699,7 @@ function reorderAfterAnswer(){
             def.splice(def.indexOf(firstAnswerGroup[1]),1);
             def.splice(def.indexOf(firstAnswerGroup[2]),1);
             def.splice(def.indexOf(firstAnswerGroup[3]),1);
+            answersArray.splice(answersArray.indexOf(firstAnswer),1);
 
             unshuffled = abc;
             shuffled1 = unshuffled
@@ -657,6 +722,8 @@ function reorderAfterAnswer(){
             document.querySelectorAll(".connections_tile")[5].innerHTML = secondAnswerGroup[1];
             document.querySelectorAll(".connections_tile")[6].innerHTML = secondAnswerGroup[2];
             document.querySelectorAll(".connections_tile")[7].innerHTML = secondAnswerGroup[3];
+            document.querySelectorAll(".answerTextBox")[1].innerHTML = secondAnswer;
+            document.querySelectorAll(".optionsTextBox")[1].innerHTML = secondAnswerGroup;
             abc.splice(abc.indexOf(secondAnswerGroup[0]),1);
             abc.splice(abc.indexOf(secondAnswerGroup[1]),1);
             abc.splice(abc.indexOf(secondAnswerGroup[2]),1);
@@ -690,6 +757,8 @@ function reorderAfterAnswer(){
             document.querySelectorAll(".connections_tile")[9].innerHTML = thirdAnswerGroup[1];
             document.querySelectorAll(".connections_tile")[10].innerHTML = thirdAnswerGroup[2];
             document.querySelectorAll(".connections_tile")[11].innerHTML = thirdAnswerGroup[3];
+            document.querySelectorAll(".answerTextBox")[2].innerHTML = thirdAnswer;
+            document.querySelectorAll(".optionsTextBox")[2].innerHTML = thirdAnswerGroup;
             abc.splice(abc.indexOf(thirdAnswerGroup[0]),1);
             abc.splice(abc.indexOf(thirdAnswerGroup[1]),1);
             abc.splice(abc.indexOf(thirdAnswerGroup[2]),1);
@@ -727,6 +796,8 @@ function reorderAfterAnswer(){
             document.querySelectorAll(".connections_tile")[13].innerHTML = fourthAnswerGroup[1];
             document.querySelectorAll(".connections_tile")[14].innerHTML = fourthAnswerGroup[2];
             document.querySelectorAll(".connections_tile")[15].innerHTML = fourthAnswerGroup[3];
+            document.querySelectorAll(".answerTextBox")[3].innerHTML = fourthAnswer;
+            document.querySelectorAll(".optionsTextBox")[3].innerHTML = fourthAnswerGroup;
             abc.splice(abc.indexOf(fourthAnswerGroup[0]),1);
             abc.splice(abc.indexOf(fourthAnswerGroup[1]),1);
             abc.splice(abc.indexOf(fourthAnswerGroup[2]),1);
@@ -834,21 +905,55 @@ function deselectAll(){
 
 /* End game colour change */
 function endGamesColourChange(){
+
     for(let i=0; i<4; i++){
         document.querySelectorAll(".connections_tile")[i].style.backgroundColor = "blue";
         document.querySelectorAll(".connections_tile")[i].style.color = "white";
+        document.querySelectorAll(".connections_tile")[i].style.opacity="0";
     };
     for(let i=4; i<8; i++){
         document.querySelectorAll(".connections_tile")[i].style.backgroundColor = "green";
         document.querySelectorAll(".connections_tile")[i].style.color = "white";
+        document.querySelectorAll(".connections_tile")[i].style.opacity="0";
     };
     for(let i=8; i<12; i++){
         document.querySelectorAll(".connections_tile")[i].style.backgroundColor = "purple";
         document.querySelectorAll(".connections_tile")[i].style.color = "white";
+        document.querySelectorAll(".connections_tile")[i].style.opacity="0";
     };
     for(let i=12; i<16; i++){
         document.querySelectorAll(".connections_tile")[i].style.backgroundColor = "orange";
         document.querySelectorAll(".connections_tile")[i].style.color = "white";
+        document.querySelectorAll(".connections_tile")[i].style.opacity="0";
+    };
+
+    for(let i = 0; i < 1; i++){
+        document.querySelectorAll(".answer_tiles")[i].style.backgroundColor = "blue";
+        document.querySelectorAll(".answer_tiles")[i].style.color = "white";
+        document.querySelectorAll(".answer_tiles")[i].style.opacity = "1";
+        document.querySelectorAll(".answerTextBox")[i].style.opacity = "1";
+        document.querySelectorAll(".optionsTextBox")[i].style.opacity = "1";
+    };
+    for(let i = 1; i < 2; i++){
+        document.querySelectorAll(".answer_tiles")[i].style.backgroundColor = "green";
+        document.querySelectorAll(".answer_tiles")[i].style.color = "white";
+        document.querySelectorAll(".answer_tiles")[i].style.opacity = "1";
+        document.querySelectorAll(".answerTextBox")[i].style.opacity = "1";
+        document.querySelectorAll(".optionsTextBox")[i].style.opacity = "1";
+    };
+    for(let i = 2; i < 3; i++){
+        document.querySelectorAll(".answer_tiles")[i].style.backgroundColor = "purple";
+        document.querySelectorAll(".answer_tiles")[i].style.color = "white";
+        document.querySelectorAll(".answer_tiles")[i].style.opacity = "1";
+        document.querySelectorAll(".answerTextBox")[i].style.opacity = "1";
+        document.querySelectorAll(".optionsTextBox")[i].style.opacity = "1";
+    };
+    for(let i = 3; i < 4; i++){
+        document.querySelectorAll(".answer_tiles")[i].style.backgroundColor = "orange";
+        document.querySelectorAll(".answer_tiles")[i].style.color = "white";
+        document.querySelectorAll(".answer_tiles")[i].style.opacity = "1";
+        document.querySelectorAll(".answerTextBox")[i].style.opacity = "1";
+        document.querySelectorAll(".optionsTextBox")[i].style.opacity = "1";
     };
 }
 
@@ -875,6 +980,14 @@ function endGame(){
             document.querySelectorAll(".connections_tile")[13].innerHTML = answerGroup4[1];
             document.querySelectorAll(".connections_tile")[14].innerHTML = answerGroup4[2];
             document.querySelectorAll(".connections_tile")[15].innerHTML = answerGroup4[3];
+            document.querySelectorAll(".answerTextBox")[0].innerHTML = answer1;
+            document.querySelectorAll(".optionsTextBox")[0].innerHTML = answerGroup1;
+            document.querySelectorAll(".answerTextBox")[1].innerHTML = answer2;
+            document.querySelectorAll(".optionsTextBox")[1].innerHTML = answerGroup2;
+            document.querySelectorAll(".answerTextBox")[2].innerHTML = answer3;
+            document.querySelectorAll(".optionsTextBox")[2].innerHTML = answerGroup3;
+            document.querySelectorAll(".answerTextBox")[3].innerHTML = answer4;
+            document.querySelectorAll(".optionsTextBox")[3].innerHTML = answerGroup4;
         break;
         case 1:
             document.querySelectorAll(".connections_tile")[4].innerHTML = def[0];
@@ -889,6 +1002,12 @@ function endGame(){
             document.querySelectorAll(".connections_tile")[13].innerHTML = def[9];
             document.querySelectorAll(".connections_tile")[14].innerHTML = def[10];
             document.querySelectorAll(".connections_tile")[15].innerHTML = def[11];
+            document.querySelectorAll(".answerTextBox")[1].innerHTML = answersArray[0];
+            document.querySelectorAll(".optionsTextBox")[1].innerHTML = def[0].concat(",", def[1], ",", def[2], ",", def[3]);
+            document.querySelectorAll(".answerTextBox")[2].innerHTML = answersArray[1];
+            document.querySelectorAll(".optionsTextBox")[2].innerHTML = def[4].concat(",", def[5], ",", def[6], ",", def[7]);
+            document.querySelectorAll(".answerTextBox")[3].innerHTML = answersArray[2];
+            document.querySelectorAll(".optionsTextBox")[3].innerHTML = def[8].concat(",", def[9], ",", def[10], ",", def[11]);
         break;
         case 2:
             document.querySelectorAll(".connections_tile")[8].innerHTML = def[0];
@@ -899,6 +1018,10 @@ function endGame(){
             document.querySelectorAll(".connections_tile")[13].innerHTML = def[5];
             document.querySelectorAll(".connections_tile")[14].innerHTML = def[6];
             document.querySelectorAll(".connections_tile")[15].innerHTML = def[7];
+            document.querySelectorAll(".answerTextBox")[1].innerHTML = answersArray[0];
+            document.querySelectorAll(".optionsTextBox")[1].innerHTML = def[0].concat(",", def[1], ",", def[2], ",", def[3]);
+            document.querySelectorAll(".answerTextBox")[2].innerHTML = answersArray[1];
+            document.querySelectorAll(".optionsTextBox")[2].innerHTML = def[4].concat(",", def[5], ",", def[6], ",", def[7]);
         break;
         default:
         ;
@@ -939,246 +1062,3 @@ function changeLifeCount(){
 
 refreshArray();
 configureButtons();
-
-/* old checkAnswers Function
-function checkAnswers(){
-
-    let finalSelectedTiles = selectedTiles.sort();
-    let finalAnswerGroup1 = answerGroup1.sort();
-    let finalAnswerGroup2 = answerGroup2.sort();
-    let finalAnswerGroup3 = answerGroup3.sort();
-    let finalAnswerGroup4 = answerGroup4.sort();
-        
-    switch(numberOfClicked){
-        case 4:
-            if (finalSelectedTiles[0] === finalAnswerGroup1[0] && finalSelectedTiles[1] === finalAnswerGroup1[1] && finalSelectedTiles[2] === finalAnswerGroup1[2] && finalSelectedTiles[3] === finalAnswerGroup1[3]){
-                alert ("Correct!!! The theme for this was... " + answer1);
-                switch(correctSets){
-                    case 0:
-                        firstAnswerGroup = selectedTiles;
-                    break;
-                    case 1:
-                        secondAnswerGroup = selectedTiles;
-                    break;
-                    case 2:
-                        thirdAnswerGroup = selectedTiles;
-                    break;
-                    case 3:
-                        fourthAnswerGroup = selectedTiles;
-                    break;
-                    default:
-                        ;
-                };
-                correctSets++;
-                selectedTiles = [];
-                numberOfClicked = 0;
-                setRowColors();
-                reorderAfterAnswer();
-            } else if (finalSelectedTiles[0] === finalAnswerGroup2[0] && finalSelectedTiles[1] === finalAnswerGroup2[1] && finalSelectedTiles[2] === finalAnswerGroup2[2] && finalSelectedTiles[3] === finalAnswerGroup2[3]){
-                alert ("Correct!!! The theme for this was... " + answer2);
-                switch(correctSets){
-                    case 0:
-                        firstAnswerGroup = selectedTiles;
-                    break;
-                    case 1:
-                        secondAnswerGroup = selectedTiles;
-                    break;
-                    case 2:
-                        thirdAnswerGroup = selectedTiles;
-                    break;
-                    case 3:
-                        fourthAnswerGroup = selectedTiles;
-                    break;
-                    default:
-                        ;
-                };
-                correctSets++;
-                selectedTiles = [];
-                numberOfClicked = 0;
-                setRowColors();
-                reorderAfterAnswer();
-            } else if (finalSelectedTiles[0] === finalAnswerGroup3[0] && finalSelectedTiles[1] === finalAnswerGroup3[1] && finalSelectedTiles[2] === finalAnswerGroup3[2] && finalSelectedTiles[3] === finalAnswerGroup3[3]){
-                alert ("Correct!!! The theme for this was... " + answer3);
-                switch(correctSets){
-                    case 0:
-                        firstAnswerGroup = selectedTiles;
-                    break;
-                    case 1:
-                        secondAnswerGroup = selectedTiles;
-                    break;
-                    case 2:
-                        thirdAnswerGroup = selectedTiles;
-                    break;
-                    case 3:
-                        fourthAnswerGroup = selectedTiles;
-                    break;
-                    default:
-                        ;
-                };
-                correctSets++;
-                selectedTiles = [];
-                numberOfClicked = 0;
-                setRowColors();
-                reorderAfterAnswer();
-            } else if (finalSelectedTiles[0] === finalAnswerGroup4[0] && finalSelectedTiles[1] === finalAnswerGroup4[1] && finalSelectedTiles[2] === finalAnswerGroup4[2] && finalSelectedTiles[3] === finalAnswerGroup4[3]){
-                alert ("Correct!!! The theme for this was... " + answer4);
-                switch(correctSets){
-                    case 0:
-                        firstAnswerGroup = selectedTiles;
-                    break;
-                    case 1:
-                        secondAnswerGroup = selectedTiles;
-                    break;
-                    case 2:
-                        thirdAnswerGroup = selectedTiles;
-                    break;
-                    case 3:
-                        fourthAnswerGroup = selectedTiles;
-                    break;
-                    default:
-                        ;
-                };
-                correctSets++;
-                selectedTiles = [];
-                numberOfClicked = 0;
-                setRowColors();
-                reorderAfterAnswer();
-            } else {
-                alert ("No Match :(");
-            }
-        break;
-
-        default:
-            alert("4 tiles must be pressed!");
-        }
-}
-*/
-
-/* Backup - Checks the selected answers */
-/*
-function checkAnswersBackup(){
-
-    let finalSelectedTiles = selectedTiles.sort();
-    let finalAnswerGroup1 = answerGroup1.sort();
-    let finalAnswerGroup2 = answerGroup2.sort();
-    let finalAnswerGroup3 = answerGroup3.sort();
-    let finalAnswerGroup4 = answerGroup4.sort();
-        
-    switch(numberOfClicked){
-        case 4:
-            if (finalSelectedTiles[0] === finalAnswerGroup1[0] && finalSelectedTiles[1] === finalAnswerGroup1[1] && finalSelectedTiles[2] === finalAnswerGroup1[2] && finalSelectedTiles[3] === finalAnswerGroup1[3]){
-                alert ("Correct!!! The theme for this was... " + answer1);
-                switch(correctSets){
-                    case 0:
-                        firstAnswerGroup = selectedTiles;
-                    break;
-                    case 1:
-                        secondAnswerGroup = selectedTiles;
-                    break;
-                    case 2:
-                        thirdAnswerGroup = selectedTiles;
-                    break;
-                    case 3:
-                        fourthAnswerGroup = selectedTiles;
-                    break;
-                    default:
-                        ;
-                };
-                correctSets++;
-                selectedTiles = [];
-                numberOfClicked = 0;
-                setRowColors();
-                reorderAfterAnswer();
-            } else if (finalSelectedTiles[0] === finalAnswerGroup2[0] && finalSelectedTiles[1] === finalAnswerGroup2[1] && finalSelectedTiles[2] === finalAnswerGroup2[2] && finalSelectedTiles[3] === finalAnswerGroup2[3]){
-                alert ("Correct!!! The theme for this was... " + answer2);
-                switch(correctSets){
-                    case 0:
-                        firstAnswerGroup = selectedTiles;
-                    break;
-                    case 1:
-                        secondAnswerGroup = selectedTiles;
-                    break;
-                    case 2:
-                        thirdAnswerGroup = selectedTiles;
-                    break;
-                    case 3:
-                        fourthAnswerGroup = selectedTiles;
-                    break;
-                    default:
-                        ;
-                };
-                correctSets++;
-                selectedTiles = [];
-                numberOfClicked = 0;
-                setRowColors();
-                reorderAfterAnswer();
-            } else if (finalSelectedTiles[0] === finalAnswerGroup3[0] && finalSelectedTiles[1] === finalAnswerGroup3[1] && finalSelectedTiles[2] === finalAnswerGroup3[2] && finalSelectedTiles[3] === finalAnswerGroup3[3]){
-                alert ("Correct!!! The theme for this was... " + answer3);
-                switch(correctSets){
-                    case 0:
-                        firstAnswerGroup = selectedTiles;
-                    break;
-                    case 1:
-                        secondAnswerGroup = selectedTiles;
-                    break;
-                    case 2:
-                        thirdAnswerGroup = selectedTiles;
-                    break;
-                    case 3:
-                        fourthAnswerGroup = selectedTiles;
-                    break;
-                    default:
-                        ;
-                };
-                correctSets++;
-                selectedTiles = [];
-                numberOfClicked = 0;
-                setRowColors();
-                reorderAfterAnswer();
-            } else if (finalSelectedTiles[0] === finalAnswerGroup4[0] && finalSelectedTiles[1] === finalAnswerGroup4[1] && finalSelectedTiles[2] === finalAnswerGroup4[2] && finalSelectedTiles[3] === finalAnswerGroup4[3]){
-                alert ("Correct!!! The theme for this was... " + answer4);
-                switch(correctSets){
-                    case 0:
-                        firstAnswerGroup = selectedTiles;
-                    break;
-                    case 1:
-                        secondAnswerGroup = selectedTiles;
-                    break;
-                    case 2:
-                        thirdAnswerGroup = selectedTiles;
-                    break;
-                    case 3:
-                        fourthAnswerGroup = selectedTiles;
-                    break;
-                    default:
-                        ;
-                };
-                correctSets++;
-                selectedTiles = [];
-                numberOfClicked = 0;
-                setRowColors();
-                reorderAfterAnswer();
-            } else {
-                incorrectGuesses++;
-                changeLifeCount();
-                switch(incorrectGuesses){
-                case 4:
-                    endGame();
-                break;
-                default:
-                    ;
-                }
-                switch(incorrectGuesses){
-                    case 4:
-                    break;
-                    default:
-                        alert ("No Match :(");
-                }
-            }
-        break;
-
-        default:
-            alert("4 tiles must be pressed!");
-        }
-}
-*/
